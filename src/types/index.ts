@@ -1,7 +1,7 @@
-import type { UploadFile } from "antd";
-import type { UploadChangeParam } from "antd/lib/upload";
+import type { UploadFile } from 'antd';
+import type { UploadChangeParam } from 'antd/lib/upload';
 
-export * from "./subclasses";
+export * from './subclasses';
 export type UploadResponse = UploadChangeParam<UploadFile<Media[]>>;
 
 export type AccountForm = {
@@ -21,7 +21,7 @@ export type Account = {
   logo?: Media;
   invoices?: Invoice[];
   clients?: Client[];
-} & Omit<AccountForm, "logo">;
+} & Omit<AccountForm, 'logo'>;
 
 export type Client = {
   id: number;

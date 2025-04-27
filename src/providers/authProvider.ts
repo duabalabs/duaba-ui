@@ -5,16 +5,16 @@ import {
   IdentityResponse,
   OnErrorResponse,
   PermissionResponse,
-} from "@refinedev/core";
+} from '@refinedev/core';
 
-import Parse from "parse";
+import Parse from 'parse';
 
 export const authProvider: AuthProvider = {
   login: async ({ email, password }): Promise<AuthActionResponse> => {
     try {
       const user = await Parse.User.logIn(email, password);
       if (user) {
-        localStorage.setItem("user", JSON.stringify(user.toJSON()));
+        localStorage.setItem('user', JSON.stringify(user.toJSON()));
         return { success: true };
       }
     } catch (error) {
@@ -32,16 +32,16 @@ export const authProvider: AuthProvider = {
       const user = new Parse.User();
 
       // required fields
-      user.set("username", email); // Parse requires a username
-      user.set("email", email);
-      user.set("password", password);
+      user.set('username', email); // Parse requires a username
+      user.set('email', email);
+      user.set('password', password);
 
       // optional extra fields (e.g. firstName, role, etc.)
       Object.entries(rest).forEach(([key, value]) => user.set(key, value));
 
       await user.signUp(); // throws if email already taken, weak pwd, etc.
 
-      localStorage.setItem("user", JSON.stringify(user.toJSON()));
+      localStorage.setItem('user', JSON.stringify(user.toJSON()));
       return { success: true };
     } catch (error) {
       return { success: false, error };
@@ -51,7 +51,7 @@ export const authProvider: AuthProvider = {
   logout: async (): Promise<AuthActionResponse> => {
     try {
       await Parse.User.logOut();
-      localStorage.removeItem("user");
+      localStorage.removeItem('user');
       return { success: true };
     } catch (error) {
       return { success: false, error };
@@ -59,14 +59,14 @@ export const authProvider: AuthProvider = {
   },
 
   check: async (): Promise<CheckResponse> => {
-    const user = localStorage.getItem("user");
+    const user = localStorage.getItem('user');
     return user
       ? { authenticated: true }
       : {
           authenticated: false,
           error: {
-            message: "User not authenticated",
-            name: "NotAuthenticated",
+            message: 'User not authenticated',
+            name: 'NotAuthenticated',
           },
         };
   },
@@ -74,7 +74,7 @@ export const authProvider: AuthProvider = {
   onError: async (error): Promise<OnErrorResponse> => {
     if (error?.status === 209) {
       // Invalid session token
-      return { redirectTo: "/login" };
+      return { redirectTo: '/login' };
     }
     return {};
   },
@@ -82,7 +82,7 @@ export const authProvider: AuthProvider = {
   getPermissions: async (): Promise<PermissionResponse> => {
     const user = Parse.User.current();
     if (user) {
-      return { permissions: user.get("role") };
+      return { permissions: user.get('role') };
     }
     return { permissions: null };
   },

@@ -1,12 +1,12 @@
-import type { FC } from "react";
-import { useLocation } from "react-router-dom";
+import type { FC } from 'react';
+import { useLocation } from 'react-router-dom';
 
-import { useGo, useNavigation } from "@refinedev/core";
+import { useGo, useNavigation } from '@refinedev/core';
 
-import { PlusCircleOutlined } from "@ant-design/icons";
-import { Button, Grid } from "antd";
+import { PlusCircleOutlined } from '@ant-design/icons';
+import { Button, Grid } from 'antd';
 
-import { Text } from ".";
+import { Text } from '.';
 
 interface ListTitleButtonProps {
   toPath: string;
@@ -35,18 +35,18 @@ export const ListTitleButton: FC<ListTitleButtonProps> = ({
           options: {
             keepQuery: true,
           },
-          type: "replace",
+          type: 'replace',
         });
       }}
-      size={screens.xs ? "middle" : "large"}
+      size={screens.xs ? 'middle' : 'large'}
       style={{
-        marginTop: screens.xs ? "1.6rem" : "0.3rem",
+        marginTop: screens.xs ? '1.6rem' : '0.3rem',
       }}
     >
       <Text
         style={{
-          color: "#fff",
-          fontSize: "16px",
+          color: '#fff',
+          fontSize: '16px',
           fontWeight: 400,
         }}
       >

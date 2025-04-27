@@ -1,17 +1,17 @@
-import type { IResourceItem } from "@refinedev/core";
+import type { IResourceItem } from '@refinedev/core';
 
 import {
   ContainerOutlined,
   CrownOutlined,
   DashboardOutlined,
-} from "@ant-design/icons";
+} from '@ant-design/icons';
 
 export const resources: IResourceItem[] = [
   {
-    name: "dashboard",
-    list: "/",
+    name: 'dashboard',
+    list: '/',
     meta: {
-      label: "Dashboard",
+      label: 'Dashboard',
       // @ts-expect-error Ant Design Icon's v5.0.1 has an issue with @types/react@^18.2.66
       icon: <DashboardOutlined />,
     },
@@ -56,19 +56,19 @@ export const resources: IResourceItem[] = [
   // },
 
   {
-    name: "administration",
+    name: 'administration',
     meta: {
-      label: "Administration",
+      label: 'Administration',
       // @ts-expect-error Ant Design Icon's v5.0.1 has an issue with @types/react@^18.2.66
       icon: <CrownOutlined />,
     },
   },
   {
-    name: "settings",
-    list: "/administration/settings",
+    name: 'settings',
+    list: '/administration/settings',
     meta: {
-      label: "Settings",
-      parent: "administration",
+      label: 'Settings',
+      parent: 'administration',
     },
   },
 ];

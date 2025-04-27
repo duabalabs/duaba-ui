@@ -1,28 +1,28 @@
-import React, { type CSSProperties } from "react";
+import React, { type CSSProperties } from 'react';
 
-import { useThemedLayoutContext } from "@refinedev/antd";
+import { useThemedLayoutContext } from '@refinedev/antd';
 import {
   CanAccess,
   type ITreeMenu,
   pickNotDeprecated,
   useLink,
   useMenu,
-} from "@refinedev/core";
+} from '@refinedev/core';
 
 import {
   BarsOutlined,
   LeftOutlined,
   RightOutlined,
   UnorderedListOutlined,
-} from "@ant-design/icons";
-import { Button, Drawer, Grid, Layout, Menu, theme } from "antd";
+} from '@ant-design/icons';
+import { Button, Drawer, Grid, Layout, Menu, theme } from 'antd';
 
-import { Title } from "./title";
+import { Title } from './title';
 
 const drawerButtonStyles: CSSProperties = {
   borderTopLeftRadius: 0,
   borderBottomLeftRadius: 0,
-  position: "fixed",
+  position: 'fixed',
   top: 64,
   zIndex: 1001,
 };
@@ -44,7 +44,7 @@ export const Sider: React.FC = () => {
   const breakpoint = Grid.useBreakpoint();
 
   const isMobile =
-    typeof breakpoint.lg === "undefined" ? false : !breakpoint.lg;
+    typeof breakpoint.lg === 'undefined' ? false : !breakpoint.lg;
 
   const renderTreeView = (tree: ITreeMenu[], selectedKey?: string) => {
     return tree.map((item: ITreeMenu) => {
@@ -101,7 +101,7 @@ export const Sider: React.FC = () => {
             // @ts-expect-error Ant Design Icon's v5.0.1 has an issue with @types/react@^18.2.66
             icon={icon ?? (isRoute && <UnorderedListOutlined />)}
           >
-            <Link to={route ?? ""}>{label}</Link>
+            <Link to={route ?? ''}>{label}</Link>
             {!siderCollapsed && isSelected && (
               <div className="ant-menu-tree-arrow" />
             )}
@@ -124,11 +124,11 @@ export const Sider: React.FC = () => {
         defaultOpenKeys={defaultOpenKeys}
         mode="inline"
         style={{
-          paddingTop: "8px",
-          border: "none",
-          overflow: "auto",
-          height: "calc(100% - 72px)",
-          background: "transparent",
+          paddingTop: '8px',
+          border: 'none',
+          overflow: 'auto',
+          height: 'calc(100% - 72px)',
+          background: 'transparent',
         }}
         onClick={() => {
           setMobileSiderOpen(false);
@@ -159,21 +159,21 @@ export const Sider: React.FC = () => {
             <Layout.Sider
               width={500}
               style={{
-                height: "100vh",
+                height: '100vh',
                 backgroundColor: token.colorBgContainer,
                 borderRight: `1px solid ${token.colorBorderBg}`,
               }}
             >
               <div
                 style={{
-                  width: "256px",
-                  padding: "0 16px",
-                  display: "flex",
-                  justifyContent: "flex-start",
-                  alignItems: "center",
-                  height: "64px",
+                  width: '256px',
+                  padding: '0 16px',
+                  display: 'flex',
+                  justifyContent: 'flex-start',
+                  alignItems: 'center',
+                  height: '64px',
                   backgroundColor: token.colorBgElevated,
-                  borderBottom: "none",
+                  borderBottom: 'none',
                 }}
               >
                 <Title collapsed={false} />
@@ -200,10 +200,10 @@ export const Sider: React.FC = () => {
   const siderStyles: React.CSSProperties = {
     backgroundColor: token.colorBgContainer,
     borderRight: `1px solid ${token.colorBorderBg}`,
-    position: "sticky",
+    position: 'sticky',
     top: 0,
     left: 0,
-    height: "100vh",
+    height: '100vh',
     zIndex: 999,
   };
 
@@ -215,7 +215,7 @@ export const Sider: React.FC = () => {
         collapsible
         collapsed={siderCollapsed}
         onCollapse={(collapsed, type) => {
-          if (type === "clickTrigger") {
+          if (type === 'clickTrigger') {
             setSiderCollapsed(collapsed);
           }
         }}
@@ -226,8 +226,8 @@ export const Sider: React.FC = () => {
             type="text"
             style={{
               borderRadius: 0,
-              height: "100%",
-              width: "100%",
+              height: '100%',
+              width: '100%',
               backgroundColor: token.colorBgElevated,
               borderRight: `1px solid ${token.colorBorderBg}`,
             }}
@@ -252,14 +252,14 @@ export const Sider: React.FC = () => {
       >
         <div
           style={{
-            width: siderCollapsed ? "80px" : "256px",
-            padding: siderCollapsed ? "0" : "0 16px",
-            display: "flex",
-            justifyContent: siderCollapsed ? "center" : "flex-start",
-            alignItems: "center",
-            height: "64px",
+            width: siderCollapsed ? '80px' : '256px',
+            padding: siderCollapsed ? '0' : '0 16px',
+            display: 'flex',
+            justifyContent: siderCollapsed ? 'center' : 'flex-start',
+            alignItems: 'center',
+            height: '64px',
             backgroundColor: token.colorBgElevated,
-            fontSize: "14px",
+            fontSize: '14px',
           }}
         >
           <Title collapsed={siderCollapsed} />

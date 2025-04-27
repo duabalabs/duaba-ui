@@ -4,16 +4,16 @@ import {
   useContext,
   useEffect,
   useState,
-} from "react";
+} from 'react';
 
-import { RefineThemes } from "@refinedev/antd";
+import { RefineThemes } from '@refinedev/antd';
 
 import {
   ConfigProvider as AntdConfigProvider,
   theme,
   type ThemeConfig,
-} from "antd";
-import { ThemeProvider } from "antd-style";
+} from 'antd';
+import { ThemeProvider } from 'antd-style';
 
 type ConfigProviderType = {
   mode: string;
@@ -25,30 +25,30 @@ export const ConfigProviderContext = createContext<ConfigProviderType>(
 );
 
 export const ConfigProvider: React.FC<PropsWithChildren> = ({ children }) => {
-  const colorModeFromLocalStorage = localStorage.getItem("colorMode");
+  const colorModeFromLocalStorage = localStorage.getItem('colorMode');
   const isSystemPreferenceDark = window.matchMedia(
-    "(prefers-color-scheme: dark)"
+    '(prefers-color-scheme: dark)'
   ).matches;
 
-  const systemPreference = isSystemPreferenceDark ? "dark" : "light";
+  const systemPreference = isSystemPreferenceDark ? 'dark' : 'light';
   const [mode, setMode] = useState(
     colorModeFromLocalStorage || systemPreference
   );
 
   useEffect(() => {
-    window.localStorage.setItem("colorMode", mode);
+    window.localStorage.setItem('colorMode', mode);
   }, [mode]);
 
   const setColorMode = () => {
-    if (mode === "light") {
-      setMode("dark");
+    if (mode === 'light') {
+      setMode('dark');
     } else {
-      setMode("light");
+      setMode('light');
     }
   };
 
   const { darkAlgorithm, defaultAlgorithm } = theme;
-  const algorithm = mode === "light" ? defaultAlgorithm : darkAlgorithm;
+  const algorithm = mode === 'light' ? defaultAlgorithm : darkAlgorithm;
   const customTheme: ThemeConfig = {
     // you can change the theme colors here. example: ...RefineThemes.Magenta,
     ...RefineThemes.Purple,
@@ -56,10 +56,10 @@ export const ConfigProvider: React.FC<PropsWithChildren> = ({ children }) => {
     algorithm,
     components: {
       Card: {
-        headerBg: mode === "dark" ? "#1F1F1F" : "#FAFAFA",
+        headerBg: mode === 'dark' ? '#1F1F1F' : '#FAFAFA',
       },
       Tabs: {
-        horizontalMargin: "0px",
+        horizontalMargin: '0px',
         inkBarColor: theme.getDesignToken({ algorithm }).purple8,
         itemActiveColor: theme.getDesignToken({ algorithm }).purple8,
         itemSelectedColor: theme.getDesignToken({ algorithm }).purple8,
@@ -86,7 +86,7 @@ export const ConfigProvider: React.FC<PropsWithChildren> = ({ children }) => {
 export const useConfigProvider = () => {
   const context = useContext(ConfigProviderContext);
   if (!context) {
-    throw new Error("useConfigProvider must be used within a ConfigProvider");
+    throw new Error('useConfigProvider must be used within a ConfigProvider');
   }
   return context;
 };

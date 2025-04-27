@@ -1,10 +1,10 @@
-import React, { type SVGProps, useEffect } from "react";
+import React, { type SVGProps, useEffect } from 'react';
 
-import { CSSRules } from "./styles";
+import { CSSRules } from './styles';
 
 export const GitHubBanner = () => {
   useEffect(() => {
-    const styleTag = document.createElement("style");
+    const styleTag = document.createElement('style');
     document.head.appendChild(styleTag);
     CSSRules.forEach((rule) =>
       styleTag.sheet?.insertRule(rule, styleTag.sheet.cssRules.length),
@@ -15,111 +15,111 @@ export const GitHubBanner = () => {
     <div
       className="banner bg-top-announcement"
       style={{
-        width: "100%",
-        height: "48px",
+        width: '100%',
+        height: '48px',
       }}
     >
       <div
         style={{
-          position: "relative",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "100%",
-          maxWidth: "100vw",
-          height: "100%",
-          borderBottom: "1px solid #47ebeb26",
+          position: 'relative',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          width: '100%',
+          maxWidth: '100vw',
+          height: '100%',
+          borderBottom: '1px solid #47ebeb26',
         }}
       >
         <div
           className="top-announcement-mask"
           style={{
-            position: "absolute",
+            position: 'absolute',
             left: 0,
             top: 0,
-            width: "100%",
-            height: "100%",
-            borderBottom: "1px solid #47ebeb26",
+            width: '100%',
+            height: '100%',
+            borderBottom: '1px solid #47ebeb26',
           }}
         >
           <div
             style={{
-              position: "relative",
-              width: "960px",
-              height: "100%",
-              display: "flex",
-              justifyContent: "space-between",
-              margin: "0 auto",
+              position: 'relative',
+              width: '960px',
+              height: '100%',
+              display: 'flex',
+              justifyContent: 'space-between',
+              margin: '0 auto',
             }}
           >
             <div
               style={{
-                width: "calc(50% - 300px)",
-                height: "100%",
-                position: "relative",
+                width: 'calc(50% - 300px)',
+                height: '100%',
+                position: 'relative',
               }}
             >
               <GlowSmall
                 style={{
-                  animationDelay: "1.5s",
-                  position: "absolute",
-                  top: "2px",
-                  right: "220px",
+                  animationDelay: '1.5s',
+                  position: 'absolute',
+                  top: '2px',
+                  right: '220px',
                 }}
-                id={"1"}
+                id={'1'}
               />
               <GlowSmall
                 style={{
-                  animationDelay: "1s",
-                  position: "absolute",
-                  top: "8px",
-                  right: "100px",
-                  transform: "rotate(180deg)",
+                  animationDelay: '1s',
+                  position: 'absolute',
+                  top: '8px',
+                  right: '100px',
+                  transform: 'rotate(180deg)',
                 }}
-                id={"2"}
+                id={'2'}
               />
               <GlowBig
                 style={{
-                  position: "absolute",
-                  right: "10px",
+                  position: 'absolute',
+                  right: '10px',
                 }}
-                id={"3"}
+                id={'3'}
               />
             </div>
 
             <div
               style={{
-                width: "calc(50% - 300px)",
-                height: "100%",
-                position: "relative",
+                width: 'calc(50% - 300px)',
+                height: '100%',
+                position: 'relative',
               }}
             >
               <GlowSmall
                 style={{
-                  animationDelay: "2s",
-                  position: "absolute",
-                  top: "6px",
-                  right: "180px",
-                  transform: "rotate(180deg)",
+                  animationDelay: '2s',
+                  position: 'absolute',
+                  top: '6px',
+                  right: '180px',
+                  transform: 'rotate(180deg)',
                 }}
-                id={"4"}
+                id={'4'}
               />
               <GlowSmall
                 style={{
-                  animationDelay: "0.5s",
-                  transitionDelay: "1.3s",
-                  position: "absolute",
-                  top: "2px",
-                  right: "40px",
+                  animationDelay: '0.5s',
+                  transitionDelay: '1.3s',
+                  position: 'absolute',
+                  top: '2px',
+                  right: '40px',
                 }}
-                id={"5"}
+                id={'5'}
               />
               <GlowBig
                 style={{
-                  position: "absolute",
-                  right: "-70px",
+                  position: 'absolute',
+                  right: '-70px',
                 }}
-                id={"6"}
+                id={'6'}
               />
             </div>
           </div>
@@ -138,36 +138,36 @@ const Text = () => {
       target="_blank"
       rel="noreferrer"
       style={{
-        position: "absolute",
-        height: "100%",
-        padding: "0 60px",
-        display: "flex",
-        flexWrap: "nowrap",
-        whiteSpace: "nowrap",
-        justifyContent: "center",
-        alignItems: "center",
+        position: 'absolute',
+        height: '100%',
+        padding: '0 60px',
+        display: 'flex',
+        flexWrap: 'nowrap',
+        whiteSpace: 'nowrap',
+        justifyContent: 'center',
+        alignItems: 'center',
         backgroundImage:
-          "linear-gradient(90deg, rgba(31, 63, 72, 0.00) 0%, #1F3F48 10%, #1F3F48 90%, rgba(31, 63, 72, 0.00) 100%)",
+          'linear-gradient(90deg, rgba(31, 63, 72, 0.00) 0%, #1F3F48 10%, #1F3F48 90%, rgba(31, 63, 72, 0.00) 100%)',
       }}
     >
       <div
         style={{
-          color: "#fff",
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: "8px",
-          fontSize: "16px",
+          color: '#fff',
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '8px',
+          fontSize: '16px',
         }}
       >
         <span
           style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "center",
-            alignItems: "center",
-            fontSize: "32px",
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'center',
+            alignItems: 'center',
+            fontSize: '32px',
           }}
         >
           💡
@@ -189,7 +189,7 @@ const GlowSmall = ({ style, ...props }: SVGProps<SVGSVGElement>) => {
       fill="none"
       style={{
         opacity: 1,
-        animation: "top-announcement-glow 1s ease-in-out infinite alternate",
+        animation: 'top-announcement-glow 1s ease-in-out infinite alternate',
         ...style,
       }}
     >
@@ -220,7 +220,7 @@ const GlowBig = ({ style, ...props }: SVGProps<SVGSVGElement>) => (
     {...props}
     style={{
       opacity: 1,
-      animation: "top-announcement-glow 1s ease-in-out infinite alternate",
+      animation: 'top-announcement-glow 1s ease-in-out infinite alternate',
       ...style,
     }}
   >

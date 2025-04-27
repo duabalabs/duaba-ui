@@ -1,26 +1,26 @@
-import { Outlet, Route, Routes } from "react-router-dom";
+import { Outlet, Route, Routes } from 'react-router-dom';
 
-import { ErrorComponent, useNotificationProvider } from "@refinedev/antd";
-import { Authenticated, Refine } from "@refinedev/core";
+import { ErrorComponent, useNotificationProvider } from '@refinedev/antd';
+import { Authenticated, Refine } from '@refinedev/core';
 import routerProvider, {
   CatchAllNavigate,
   DocumentTitleHandler,
   NavigateToResource,
   UnsavedChangesNotifier,
-} from "@refinedev/react-router-v6";
+} from '@refinedev/react-router-v6';
 
-import { useParseConnect } from "@duabalabs/lib-parse";
+import { useParseConnect } from '@duabalabs/lib-parse';
 
-import { FullScreenLoading, Layout } from "./components";
-import { authProvider, dataProvider } from "./providers";
-import { liveProvider } from "./providers/liveProvider";
-import { resources } from "./resources";
-import { DashboardPage } from "./routes/dashboard";
-import { ForgotPasswordPage } from "./routes/forgot-password";
-import { LoginPage } from "./routes/login";
-import { RegisterPage } from "./routes/register";
-import { UpdatePasswordPage } from "./routes/update-password";
-import { environmentVariables } from "./utilities/getEnvironmentVariables";
+import { FullScreenLoading, Layout } from './components';
+import { authProvider, dataProvider } from './providers';
+import { liveProvider } from './providers/liveProvider';
+import { resources } from './resources';
+import { DashboardPage } from './routes/dashboard';
+import { ForgotPasswordPage } from './routes/forgot-password';
+import { LoginPage } from './routes/login';
+import { RegisterPage } from './routes/register';
+import { UpdatePasswordPage } from './routes/update-password';
+import { environmentVariables } from './utilities/getEnvironmentVariables';
 
 const Dashboard: React.FC = () => {
   const { loadingParse: initialLoad } = useParseConnect(
@@ -42,7 +42,7 @@ const Dashboard: React.FC = () => {
       resources={resources}
       notificationProvider={useNotificationProvider}
       options={{
-        liveMode: "off",
+        liveMode: 'off',
         syncWithLocation: false,
         warnWhenUnsavedChanges: false,
       }}

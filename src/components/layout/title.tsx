@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import type { RefineLayoutThemedTitleProps } from "@refinedev/antd";
+import type { RefineLayoutThemedTitleProps } from '@refinedev/antd';
 
-import { Button, Flex, Space, theme, Typography } from "antd";
+import { Button, Flex, Space, theme, Typography } from 'antd';
 
-import { useAppData } from "@/context/app-data";
+import { useAppData } from '@/context/app-data';
 
-import { Logo } from "./logo";
+import { Logo } from './logo';
 
 const { useToken } = theme;
 
@@ -23,23 +23,23 @@ export const Title: React.FC<RefineLayoutThemedTitleProps> = ({
   return (
     <div
       style={{
-        display: "inline-block",
-        textDecoration: "none",
+        display: 'inline-block',
+        textDecoration: 'none',
       }}
     >
       <Button onClick={handleOpenModal} type="text">
         <Space
           style={{
-            display: "flex",
-            alignItems: "center",
-            fontSize: "inherit",
+            display: 'flex',
+            alignItems: 'center',
+            fontSize: 'inherit',
             ...wrapperStyles,
           }}
         >
           <div
             style={{
-              height: "24px",
-              width: "24px",
+              height: '24px',
+              width: '24px',
               color: token.colorPrimary,
             }}
           >
@@ -50,7 +50,7 @@ export const Title: React.FC<RefineLayoutThemedTitleProps> = ({
             <Flex vertical>
               <Typography.Title
                 style={{
-                  fontSize: "inherit",
+                  fontSize: 'inherit',
                   marginBottom: 0,
                   fontWeight: 700,
                 }}

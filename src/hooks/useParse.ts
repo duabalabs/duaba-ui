@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 import {
   IParseServerAPICred,
   ParseInitialize,
   SubClasses,
-} from "@duabalabs/lib-parse";
-import Parse from "parse";
+} from '@duabalabs/lib-parse';
+import Parse from 'parse';
 
 export const useParseConnect = (parseConfig: IParseServerAPICred) => {
   const [user, setUser] = useState<Parse.User<Parse.Attributes>>();
@@ -36,7 +36,7 @@ export function useAuth() {
       setAuthLoading(false);
       // Do something after successful login, like redirecting the user
     } catch (error) {
-      console.error("Error logging in", error);
+      console.error('Error logging in', error);
       setAuthLoading(false);
     }
   };
@@ -46,7 +46,7 @@ export function useAuth() {
       await Parse.User.logOut();
       // Perform any post-logout actions
     } catch (error) {
-      console.error("Error logging out", error);
+      console.error('Error logging out', error);
     }
   };
 

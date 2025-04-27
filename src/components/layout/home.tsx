@@ -1,8 +1,8 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
-import { Grid, Layout as AntdLayout } from "antd";
+import { Grid, Layout as AntdLayout } from 'antd';
 
-import { Header } from "./header";
+import { Header } from './header';
 
 interface HomeProps {
   children: ReactNode;
@@ -11,7 +11,7 @@ interface HomeProps {
 export const Home: React.FC<HomeProps> = ({ children }) => {
   const breakpoint = Grid.useBreakpoint();
 
-  const isSmall = typeof breakpoint.sm === "undefined" ? true : breakpoint.sm;
+  const isSmall = typeof breakpoint.sm === 'undefined' ? true : breakpoint.sm;
   return (
     <AntdLayout>
       <Header />

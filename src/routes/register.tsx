@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import { AuthPage } from "@refinedev/antd";
+import { AuthPage } from '@refinedev/antd';
 
-import { GithubOutlined, GoogleOutlined } from "@ant-design/icons";
+import { GithubOutlined, GoogleOutlined } from '@ant-design/icons';
 
-import { Title } from "@/components";
+import { Title } from '@/components';
 
 export const RegisterPage: React.FC = () => {
   return (
@@ -13,8 +13,8 @@ export const RegisterPage: React.FC = () => {
       title={<Title collapsed={false} />}
       providers={[
         {
-          name: "google",
-          label: "Sign in with Google",
+          name: 'google',
+          label: 'Sign in with Google',
           icon: (
             // @ts-expect-error Ant Design Icon's v5.0.1 has an issue with @types/react@^18.2.66
             <GoogleOutlined
@@ -26,8 +26,8 @@ export const RegisterPage: React.FC = () => {
           ),
         },
         {
-          name: "github",
-          label: "Sign in with GitHub",
+          name: 'github',
+          label: 'Sign in with GitHub',
           icon: (
             // @ts-expect-error Ant Design Icon's v5.0.1 has an issue with @types/react@^18.2.66
             <GithubOutlined

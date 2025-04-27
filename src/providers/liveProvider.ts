@@ -1,16 +1,16 @@
-import { LiveProvider } from "@refinedev/core";
+import { LiveProvider } from '@refinedev/core';
 
-import Parse from "parse";
+import Parse from 'parse';
 
 export const liveProvider: LiveProvider = {
   subscribe: async ({ params, callback }: any) => {
     const { resource, filters } = params;
 
     const query = new Parse.Query(resource);
-    query.equalTo("project", "pending"); //NOTE: only live update for live bot
+    query.equalTo('project', 'pending'); //NOTE: only live update for live bot
     if (filters) {
       filters.forEach((filter: any) => {
-        if (filter.operator === "eq") {
+        if (filter.operator === 'eq') {
           query.equalTo(filter.field, filter.value);
         }
       });
@@ -19,9 +19,9 @@ export const liveProvider: LiveProvider = {
     try {
       const subscription = await query.subscribe();
 
-      subscription.on("create", (object) => {
+      subscription.on('create', (object) => {
         callback({
-          action: "create",
+          action: 'create',
           resource,
           params,
           data: {
@@ -32,9 +32,9 @@ export const liveProvider: LiveProvider = {
         });
       });
 
-      subscription.on("update", (object) => {
+      subscription.on('update', (object) => {
         callback({
-          action: "update",
+          action: 'update',
           resource,
           params,
           data: {
@@ -45,9 +45,9 @@ export const liveProvider: LiveProvider = {
         });
       });
 
-      subscription.on("delete", (object) => {
+      subscription.on('delete', (object) => {
         callback({
-          action: "delete",
+          action: 'delete',
           resource,
           params,
           data: {

@@ -10,9 +10,9 @@ import {
   GetOneResponse,
   UpdateParams,
   UpdateResponse,
-} from "@refinedev/core";
+} from '@refinedev/core';
 
-import Parse from "parse";
+import Parse from 'parse';
 
 export const dataProvider: DataProvider = {
   getList: async <TData>({
@@ -27,7 +27,7 @@ export const dataProvider: DataProvider = {
     // Apply filters
     if (filters) {
       filters.forEach((filter) => {
-        if (filter.operator === "eq") {
+        if (filter.operator === 'eq') {
           query.equalTo(filter.field, filter.value);
         }
       });
@@ -36,7 +36,7 @@ export const dataProvider: DataProvider = {
     // Apply sorting
     if (sort && sort.length > 0) {
       const { field, order } = sort[0];
-      order === "asc" ? query.ascending(field) : query.descending(field);
+      order === 'asc' ? query.ascending(field) : query.descending(field);
     }
 
     // Apply pagination
@@ -188,6 +188,6 @@ export const dataProvider: DataProvider = {
   },
 
   getApiUrl: (): string => {
-    return Parse.serverURL ?? "";
+    return Parse.serverURL ?? '';
   },
 };

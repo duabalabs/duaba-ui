@@ -1,4 +1,4 @@
-import { IParseServerAPICred } from "@duabalabs/lib-parse";
+import { IParseServerAPICred } from '@duabalabs/lib-parse';
 
 export const environmentVariables: {
   parseConfig: IParseServerAPICred;

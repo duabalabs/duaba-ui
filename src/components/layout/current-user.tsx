@@ -1,13 +1,13 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import { useGetIdentity, useLogout } from "@refinedev/core";
+import { useGetIdentity, useLogout } from '@refinedev/core';
 
-import { LogoutOutlined, SettingOutlined } from "@ant-design/icons";
-import { User } from "@duabalabs/lib-parse";
-import { Button, Popover } from "antd";
+import { LogoutOutlined, SettingOutlined } from '@ant-design/icons';
+import { User } from '@duabalabs/lib-parse';
+import { Button, Popover } from 'antd';
 
-import { CustomAvatar } from "../custom-avatar";
-import { Text } from "../text";
+import { CustomAvatar } from '../custom-avatar';
+import { Text } from '../text';
 
 export const CurrentUser: React.FC = () => {
   const [opened, setOpened] = useState(false);
@@ -17,29 +17,29 @@ export const CurrentUser: React.FC = () => {
   const content = (
     <div
       style={{
-        display: "flex",
-        flexDirection: "column",
+        display: 'flex',
+        flexDirection: 'column',
       }}
     >
       <Text
         strong
         style={{
-          padding: "12px 20px",
+          padding: '12px 20px',
         }}
       >
         {user?.name}
       </Text>
       <div
         style={{
-          borderTop: "1px solid #d9d9d9",
-          padding: "4px",
-          display: "flex",
-          flexDirection: "column",
-          gap: "4px",
+          borderTop: '1px solid #d9d9d9',
+          padding: '4px',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '4px',
         }}
       >
         <Button
-          style={{ textAlign: "left" }}
+          style={{ textAlign: 'left' }}
           // @ts-expect-error Ant Design Icon's v5.0.1 has an issue with @types/react@^18.2.66
           icon={<SettingOutlined />}
           type="text"
@@ -49,7 +49,7 @@ export const CurrentUser: React.FC = () => {
           Account settings
         </Button>
         <Button
-          style={{ textAlign: "left" }}
+          style={{ textAlign: 'left' }}
           // @ts-expect-error Ant Design Icon's v5.0.1 has an issue with @types/react@^18.2.66
           icon={<LogoutOutlined />}
           type="text"
@@ -76,7 +76,7 @@ export const CurrentUser: React.FC = () => {
           name={user?.name}
           src={user?.avatarUrl}
           size="default"
-          style={{ cursor: "pointer" }}
+          style={{ cursor: 'pointer' }}
         />
       </Popover>
       {/* {user && (

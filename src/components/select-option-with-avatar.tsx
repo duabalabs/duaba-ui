@@ -1,14 +1,14 @@
-import type { FC } from "react";
+import type { FC } from 'react';
 
-import { Space } from "antd";
+import { Space } from 'antd';
 
-import { CustomAvatar } from "./custom-avatar";
-import { Text } from "./text";
+import { CustomAvatar } from './custom-avatar';
+import { Text } from './text';
 
 type Props = {
   name: string;
   avatarUrl?: string;
-  shape?: "circle" | "square";
+  shape?: 'circle' | 'square';
 };
 
 export const SelectOptionWithAvatar: FC<Props> = ({

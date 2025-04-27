@@ -1,21 +1,21 @@
-import React from "react";
+import React from 'react';
 
-import type { UseFormProps } from "@refinedev/antd";
-import { useForm } from "@refinedev/antd";
+import type { UseFormProps } from '@refinedev/antd';
+import { useForm } from '@refinedev/antd';
 
-import { EditOutlined } from "@ant-design/icons";
-import type { FormItemProps, FormProps } from "antd";
-import { Button, Form, Skeleton } from "antd";
+import { EditOutlined } from '@ant-design/icons';
+import type { FormItemProps, FormProps } from 'antd';
+import { Button, Form, Skeleton } from 'antd';
 
-import { Text } from "../text";
-import styles from "./index.module.css";
+import { Text } from '../text';
+import styles from './index.module.css';
 
 type SingleElementFormProps = {
   icon?: React.ReactNode;
   itemProps?: FormItemProps;
   extra?: React.ReactNode;
   view?: React.ReactNode;
-  state?: "empty" | "form" | "view";
+  state?: 'empty' | 'form' | 'view';
   onUpdate?: () => void;
   onCancel?: () => void;
   onClick?: () => void;
@@ -26,7 +26,7 @@ type SingleElementFormProps = {
 } & React.PropsWithChildren;
 
 export const SingleElementForm: React.FC<SingleElementFormProps> = ({
-  state = "view",
+  state = 'view',
   view,
   icon,
   itemProps,
@@ -41,7 +41,7 @@ export const SingleElementForm: React.FC<SingleElementFormProps> = ({
   formProps: formPropsFromProp,
 }) => {
   const { formProps, saveButtonProps } = useForm({
-    action: "edit",
+    action: 'edit',
     redirect: false,
     autoSave: {
       enabled: false,
@@ -52,7 +52,7 @@ export const SingleElementForm: React.FC<SingleElementFormProps> = ({
     onMutationSuccess() {
       onUpdate?.();
     },
-    mutationMode: "optimistic",
+    mutationMode: 'optimistic',
     ...useFormProps,
   });
 
@@ -68,7 +68,7 @@ export const SingleElementForm: React.FC<SingleElementFormProps> = ({
             {loading && (
               <Skeleton.Input className={styles.skeleton} size="small" active />
             )}
-            {state === "form" && !loading && (
+            {state === 'form' && !loading && (
               <div className={styles.formItem}>
                 <Form.Item {...itemProps} noStyle>
                   {children}
@@ -76,7 +76,7 @@ export const SingleElementForm: React.FC<SingleElementFormProps> = ({
                 {extra}
               </div>
             )}
-            {state === "empty" && !loading && (
+            {state === 'empty' && !loading && (
               <Button
                 onClick={onClick}
                 type="link"
@@ -86,10 +86,10 @@ export const SingleElementForm: React.FC<SingleElementFormProps> = ({
                 Add {itemProps?.label}
               </Button>
             )}
-            {state === "view" && view}
+            {state === 'view' && view}
           </div>
 
-          {state === "form" && (
+          {state === 'form' && (
             <div className={styles.buttons}>
               <Button onClick={() => onCancel?.()}>Cancel</Button>
               <Button type="primary" {...saveButtonProps}>
@@ -99,7 +99,7 @@ export const SingleElementForm: React.FC<SingleElementFormProps> = ({
           )}
         </div>
 
-        {state === "view" && (
+        {state === 'view' && (
           <div className={styles.actions}>
             {/* @ts-expect-error Ant Design Icon's v5.0.1 has an issue with @types/react@^18.2.66 */}
             <Button onClick={onClick} icon={<EditOutlined />} />

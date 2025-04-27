@@ -1,7 +1,7 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from 'react';
 
-import { User } from "@duabalabs/lib-parse";
-import Parse from "parse";
+import { User } from '@duabalabs/lib-parse';
+import Parse from 'parse';
 
 type AppDataType = {
   user: User;
